@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LegoMinifigures.Heads
 {
-    class NathanHead : HeadBase
+    class NathanHead : Head
     {
         public override bool HasHair { get { return true; } }
         public string HairColor { get { return "Salt n Peppa"; } }

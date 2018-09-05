@@ -2,7 +2,7 @@
 
 namespace LegoMinifigures.Heads
 {
-    abstract class HeadBase
+    abstract class Head
     {
         public abstract bool HasHair { get; }
 

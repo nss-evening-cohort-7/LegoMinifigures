@@ -1,4 +1,5 @@
 ﻿using LegoMinifigures.Heads;
+using LegoMinifigures.Torsos;
 using System;
 
 namespace LegoMinifigures
@@ -8,17 +9,14 @@ namespace LegoMinifigures
         static void Main(string[] args)
         {
             var head = new NathanHead();
+            var reptileBody = new ReptilianTorso();
+            reptileBody.Color = "Brown";
 
-            var figure = new Minifigure(head);
+            var figure = new Minifigure(head,reptileBody);
 
-            figure.DoStuff();
-
-            var head2 = new BaldHead();
-
-            var figure2 = new Minifigure(head2);
-
-            figure2.DoStuff();
-
+            figure.Greet();
+            figure.TakeABreak();
+            
             Console.ReadLine();
         }
     }
