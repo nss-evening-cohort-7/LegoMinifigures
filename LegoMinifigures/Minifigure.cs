@@ -1,5 +1,6 @@
 ﻿using LegoMinifigures.Heads;
 using LegoMinifigures.Torsos;
+using LegoMinifigures.Legs;
 using System;
 
 namespace LegoMinifigures
@@ -8,16 +9,34 @@ namespace LegoMinifigures
     {
         private readonly Head _head;
         private readonly Torso _torso;
+        private readonly Legs.Legs _legs;
 
-        public Minifigure(Head head, Torso torso )
+        public string Name { get; }
+        public string Description
         {
+            get
+            {
+                return $"{(_head.HasHair ?"Hairy" : "Bald")} {_torso.Color} {_torso.NumberOfArms} armed thing";
+            }
+        }
+
+        public Minifigure(string name, Head head, Torso torso, Legs.Legs legs)
+        {
+            Name = name;
             _head = head;
             _torso = torso;
+            _legs = legs;
+        }
+
+        public void Karate(Minifigure target)
+        {
+            _legs.Kick(target);
         }
 
         public void Greet()
         {
             _head.Talk();
+            _torso.Wave();
         }
 
         public void TakeABreak()
@@ -42,9 +61,9 @@ namespace LegoMinifigures
             //    reptilianTorso.Dance();
             //}
 
-            switch(_torso)
+            switch (_torso)
             {
-                case BirdTorso bird :
+                case BirdTorso bird:
                     bird.Fly();
                     bird.Dance();
                     bird.Fly();
