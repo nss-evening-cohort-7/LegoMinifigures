@@ -5,13 +5,14 @@ using System;
 
 namespace LegoMinifigures
 {
-    class Minifigure
+    class Minifigure : IGreeter, IGreetable
     {
         private readonly Head _head;
         private readonly Torso _torso;
         private readonly Legs.Legs _legs;
 
         public string Name { get; }
+
         public string Description
         {
             get
@@ -33,9 +34,9 @@ namespace LegoMinifigures
             _legs.Kick(target);
         }
 
-        public void Greet()
+        public void Greet(IGreetable greetable)
         {
-            _head.Talk();
+            _head.Talk(greetable);
             _torso.Wave();
         }
 

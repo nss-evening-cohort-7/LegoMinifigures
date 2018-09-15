@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2043
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegoMinifigures", "LegoMinifigures\LegoMinifigures.csproj", "{90BBE323-2F21-44E0-B447-4F2A5681C297}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LegoMinifigures", "LegoMinifigures\LegoMinifigures.csproj", "{90BBE323-2F21-44E0-B447-4F2A5681C297}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Readme", "Readme", "{5414111D-E530-42E5-BF72-988990CB2EEE}"
+	ProjectSection(SolutionItems) = preProject
+		readme.md = readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

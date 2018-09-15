@@ -2,6 +2,7 @@
 using LegoMinifigures.Legs;
 using LegoMinifigures.Torsos;
 using System;
+using System.Collections.Generic;
 
 namespace LegoMinifigures
 {
@@ -19,7 +20,7 @@ namespace LegoMinifigures
 
             var bestTeacher = new Minifigure("Nathan",head,reptileBody, babyLegs);
 
-            bestTeacher.Greet();
+            bestTeacher.Greet(new Person {Name = "Bob"});
 
             var head2 = new MartinHead();
             var birdBody = new BirdTorso();
@@ -31,13 +32,21 @@ namespace LegoMinifigures
 
             var martin = new Minifigure("Martin",head2,birdBody, manLegs);
 
-            martin.Greet();
+            martin.Greet(bestTeacher);
 
             bestTeacher.Karate(martin);
 
             martin.TakeABreak();
             bestTeacher.TakeABreak();
-            
+
+            var pastor = new Pastor() {Name = "Honorable Rev. Eugene Babylegs III"};
+
+            var greeters = new List<IGreeter> {pastor, bestTeacher, martin};
+            foreach (var greeter in greeters)
+            {
+                greeter.Greet(pastor);
+            }
+
             Console.ReadLine();
         }
     }
